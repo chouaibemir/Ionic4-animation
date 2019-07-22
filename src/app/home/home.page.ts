@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LottieAnimationViewModule } from 'ng-lottie';
 
 @Component({
   selector: 'app-home',
@@ -6,7 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
-
-  constructor() {}
+  lottieConfig: any;
+  constructor() {
+    LottieAnimationViewModule.forRoot();
+    this.lottieConfig = {
+      path: 'assets/chargeMoney.json',
+      autoplay: true,
+      loop: true
+    }
+  }
 
 }
